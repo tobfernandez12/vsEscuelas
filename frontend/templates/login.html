@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+
+<body class="login-body">
+
+    <main class="login-contenedor">
+
+        <div class="login-icono">✦</div>
+
+        <h1>Mesa de Ayuda</h1>
+        <p class="login-subtitulo">Centro de Formación Horizonte</p>
+
+        <form method="POST" action="{{ url_for('login') }}">
+
+            <div class="campo">
+                <label for="usuario">Usuario</label>
+                <input type="text" id="usuario" name="usuario" placeholder="Ingrese su usuario" required>
+            </div>
+
+            <div class="campo">
+
+                <label for="clave">Contraseña</label>
+
+                <div class="campo-password">
+                    <input type="password" id="clave" name="clave" placeholder="Ingrese su contraseña" required>
+                    <button type="button" id="mostrarClave" class="boton-ojo">Ver</button>
+                </div>
+
+            </div>
+            <button type="submit" class="boton-login">Iniciar sesión</button>
+
+        </form>
+
+        <p class="login-pie">Sistema de gestión de incidencias técnicas</p>
+
+    </main>
+    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+</body>
+</html>

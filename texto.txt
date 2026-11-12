@@ -1,0 +1,14 @@
+Tecnologías que vamos a usar:
+-HTML, CSS y JS
+-Flask
+-Python
+-MariaDB
+-Jinja
+-DebianLinux (quizás)
+Comandos para tener el entorno virtual:
+py -m venv .env
+.\.env\Scripts\activate
+(EN CASO DE QUE NO LES DEJE ACTIVAR EL ENTORNO VIRTUAL. PONGAN EL SIGUIENTE COMANDO EN POWERSHELL COMO ADMINISTRADOR:
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+)
+pip install flask
