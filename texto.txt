@@ -1,0 +1,7 @@
+Tecnologías que vamos a usar:
+-HTML, CSS y JS
+-Jask
+-Python
+-MariaDB
+-Jinja
+-DebianLinux (quizás)
