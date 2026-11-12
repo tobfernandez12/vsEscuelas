@@ -26,12 +26,12 @@ def login():
 
 
 # Vistas temporales de desarrollo: falta agregar sesión y permisos.
-@app.route("/operador")
+@app.route("/usuario")
 def operador():
     return render_template("usuario.html")
 
 
-@app.route("/admin")
+@app.route("/administrador")
 def admin():
     return render_template("administrador.html")
 
