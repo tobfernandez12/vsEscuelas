@@ -4,11 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reportes - Usuario</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/usuario.css') }}">
-    <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}" type="png">
+    <link rel="stylesheet" href="../static/css/usuario.css">
 </head>
 <body>
-    <h1>Reportes</h1>
+
+    <div>
+        <h1>Reportes</h1>
+        <form action="{{ url_for('logout') }}" method="POST">
+            <button type="submit">Cerrar sesión</button>
+        </form>
+    </div>
+
 
     <h2>Crear reporte</h2>
     <form id="crear-reporte">
@@ -61,6 +67,6 @@
         </label>
         <button type="submit" disabled>Guardar cambios</button>
     </form>
-    <script src="{{ url_for('static', filename='js/usuario.js') }}"></script>
+    <script src="../static/js/usuario.js"></script>
 </body>
 </html>
