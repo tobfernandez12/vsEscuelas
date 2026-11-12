@@ -4,64 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administración de reportes</title>
-    <link rel="stylesheet" href="../public/css/administrador.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/administrador.css') }}">
 </head>
 <body>
     <h1>Administración de reportes</h1>
 
     <h2>Crear reporte</h2>
-    <form>
-        <label>Título <input type="text" name="titulo"></label>
-        <label>Descripción <textarea name="descripcion"></textarea></label>
+    <form id="crear-reporte">
+        <label>Título <input type="text" name="titulo" required></label>
+        <label>Descripción <textarea name="descripcion" required></textarea></label>
         <label>Prioridad
             <select name="prioridad">
-                <option>Baja</option>
-                <option>Media</option>
-                <option>Alta</option>
+                <option value="Baja">Baja</option>
+                <option value="Media">Media</option>
+                <option value="Alta">Alta</option>
             </select>
         </label>
         <button type="submit">Crear reporte</button>
     </form>
 
     <h2>Buscar reportes</h2>
-    <form class="filtros">
-        <input type="search" placeholder="Buscar reporte">
+    <form id="filtro-reportes" class="filtros">
+        <input type="search" name="busqueda" placeholder="Buscar reporte">
         <select name="estado">
-            <option>Todos los estados</option>
-            <option>Abierto</option>
-            <option>En proceso</option>
-            <option>Cerrado</option>
+            <option value="">Todos los estados</option>
+            <option value="Abierto">Abierto</option>
+            <option value="En proceso">En proceso</option>
+            <option value="Cerrado">Cerrado</option>
         </select>
         <button type="submit">Filtrar</button>
     </form>
 
     <h2>Listado</h2>
-    <ul>
-        <li><a href="#detalle">Reporte de ejemplo</a> - Abierto - Alta</li>
-    </ul>
+    <ul id="lista-reportes"></ul>
 
     <h2 id="detalle">Detalle del reporte</h2>
-    <p><strong>Título:</strong> Reporte de ejemplo</p>
-    <p><strong>Descripción:</strong> Descripción del reporte</p>
-    <p><strong>Prioridad:</strong> Alta</p>
-    <p><strong>Estado:</strong> Abierto</p>
+    <p><strong>Título:</strong> <span id="detalle-titulo">Seleccioná un reporte</span></p>
+    <p><strong>Descripción:</strong> <span id="detalle-descripcion">-</span></p>
+    <p><strong>Prioridad:</strong> <span id="detalle-prioridad">-</span></p>
+    <p><strong>Estado:</strong> <span id="detalle-estado">-</span></p>
 
-    <form>
+    <form id="editar-reporte">
         <label>Cambiar estado
             <select name="estado">
-                <option>Abierto</option>
-                <option>En proceso</option>
-                <option>Cerrado</option>
+                <option value="Abierto">Abierto</option>
+                <option value="En proceso">En proceso</option>
+                <option value="Cerrado">Cerrado</option>
             </select>
         </label>
         <label>Solución
             <textarea name="solucion" placeholder="Escribir solución"></textarea>
         </label>
-        <button type="submit">Guardar cambios</button>
+        <button type="submit" disabled>Guardar cambios</button>
     </form>
 
-    <form class="eliminar" onsubmit="return confirm('¿Seguro que querés eliminar este reporte?');">
-        <button type="submit">Eliminar reporte abierto</button>
+    <form id="eliminar-reporte" class="eliminar">
+        <button type="submit" disabled>Eliminar reporte abierto</button>
     </form>
+    <script src="{{ url_for('static', filename='js/administrador.js') }}"></script>
 </body>
 </html>
