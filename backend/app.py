@@ -12,12 +12,7 @@ app = Flask(
 
 @app.route("/")
 def inicio():
-    return redirect(url_for("operador"))
-
-@app.route("/login")
-def login():
     return redirect(url_for("login"))
-
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -31,14 +26,14 @@ def login():
 
 
 # Vistas temporales de desarrollo: falta agregar sesión y permisos.
-@app.route("/operador")
+@app.route("/usuario")
 def operador():
-    return render_template("index.html")
+    return render_template("usuario.html")
 
 
-@app.route("/admin")
+@app.route("/administrador")
 def admin():
-    return render_template("admin.html")
+    return render_template("administrador.html")
 
 
 if __name__ == "__main__":
