@@ -28,12 +28,12 @@ def login():
 # Vistas temporales de desarrollo: falta agregar sesión y permisos.
 @app.route("/operador")
 def operador():
-    return render_template("index.html")
+    return render_template("usuario.html")
 
 
 @app.route("/admin")
 def admin():
-    return render_template("admin.html")
+    return render_template("administrador.html")
 
 
 if __name__ == "__main__":
