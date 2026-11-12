@@ -1,47 +1,62 @@
+:root {
+    --fondo: #f4f7f8;
+    --superficie: #ffffff;
+    --texto: #263b4a;
+    --secundario: #667784;
+    --primario: #315f75;
+    --primario-hover: #274f63;
+    --acento: #e6f1ed;
+    --borde: #dce5e9;
+    --peligro: #a64b45;
+    --peligro-hover: #8e3c37;
+}
+
 * {
     box-sizing: border-box;
 }
 
 body {
-    max-width: 850px;
-    margin: 40px auto;
-    padding: 0 20px;
-    color: #263238;
-    background: #f3f6f8;
-    font-family: Arial, sans-serif;
+    width: min(900px, calc(100% - 40px));
+    margin: 36px auto 60px;
+    color: var(--texto);
+    background: var(--fondo);
+    font-family: "Segoe UI", Arial, sans-serif;
 }
 
 h1 {
-    color: #2879a8;
+    margin: 0 0 28px;
+    color: var(--primario);
+    font-size: 30px;
+    letter-spacing: -0.7px;
     text-align: center;
 }
 
 h2 {
-    margin-top: 28px;
-    color: #344b50;
-    font-size: 1.2rem;
+    margin: 26px 0 12px;
+    font-size: 19px;
+    letter-spacing: -0.2px;
 }
 
 form,
-ul,
-body > p {
-    margin: 12px 0;
-    padding: 20px;
-    border: 1px solid #e0e7e9;
+ul {
+    margin: 0 0 14px;
+    padding: 18px;
+    border: 1px solid var(--borde);
     border-radius: 10px;
-    background: #fff;
-    box-shadow: 0 3px 10px #2632380d;
+    background: var(--superficie);
+    box-shadow: 0 4px 14px rgba(38, 59, 74, 0.04);
 }
 
 form {
     display: grid;
-    gap: 14px;
+    gap: 13px;
 }
 
 label {
     display: grid;
     gap: 7px;
-    font-weight: bold;
+    font-size: 13px;
+    font-weight: 650;
 }
 
 input,
@@ -49,10 +64,21 @@ textarea,
 select,
 button {
     width: 100%;
-    padding: 10px 12px;
-    border: 1px solid #cbd5d8;
-    border-radius: 6px;
+    min-height: 40px;
+    padding: 9px 11px;
+    border: 1px solid var(--borde);
+    border-radius: 7px;
+    color: var(--texto);
+    background: var(--superficie);
     font: inherit;
+    font-size: 14px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--primario);
+    outline: 2px solid var(--acento);
 }
 
 textarea {
@@ -61,44 +87,119 @@ textarea {
 }
 
 button {
-    border: 0;
-    color: #fff;
-    background: #4aa9d8;
+    border-color: var(--primario);
+    color: var(--superficie);
+    background: var(--primario);
+    font-weight: 650;
     cursor: pointer;
-    font-weight: bold;
 }
 
 button:hover {
-    background: #318ab8;
+    background: var(--primario-hover);
+}
+
+button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+#filtro-reportes {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    align-items: end;
 }
 
 ul {
-    padding-left: 40px;
+    padding: 8px 18px;
+    list-style: none;
 }
 
 li {
-    padding: 4px 0;
+    padding: 11px 0;
+    border-bottom: 1px solid var(--borde);
+    color: var(--secundario);
+    font-size: 13px;
 }
 
-a {
-    color: #2879a8;
+li:last-child {
+    border-bottom: 0;
+}
+
+li a {
+    color: var(--primario);
+    font-weight: 650;
+}
+
+body > p {
+    margin: 0;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--borde);
+    background: var(--superficie);
+    color: var(--secundario);
+    font-size: 13px;
+}
+
+body > p strong {
+    color: var(--texto);
+}
+
+#detalle + p {
+    border-top: 1px solid var(--borde);
+    border-radius: 9px 9px 0 0;
+}
+
+body > p:last-of-type {
+    margin-bottom: 14px;
+    border-radius: 0 0 9px 9px;
 }
 
 .eliminar button {
-    background: #d9534f;
+    border-color: var(--peligro);
+    background: var(--peligro);
 }
 
 .eliminar button:hover {
-    background: #ba3f3b;
+    background: var(--peligro-hover);
 }
 
-@media (min-width: 600px) {
-    .filtros {
-        grid-template-columns: 2fr 1fr auto;
-        align-items: center;
+@media (min-width: 650px) {
+    #crear-reporte {
+        grid-template-columns: 1fr 1fr;
     }
 
-    .filtros button {
+    #crear-reporte label:nth-child(2) {
+        grid-row: span 2;
+    }
+
+    #crear-reporte button {
         width: auto;
+    }
+
+    #filtro-reportes button {
+        width: auto;
+    }
+
+    #editar-reporte {
+        grid-template-columns: 1fr 1fr auto;
+        align-items: end;
+    }
+
+    #editar-reporte button {
+        width: auto;
+    }
+}
+
+@media (max-width: 500px) {
+    body {
+        width: calc(100% - 28px);
+        margin-top: 24px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    form,
+    ul {
+        padding: 14px;
     }
 }
