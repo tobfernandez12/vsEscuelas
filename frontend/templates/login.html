@@ -16,6 +16,10 @@
         <h1>Mesa de Ayuda</h1>
         <p class="login-subtitulo">Centro de Formación Horizonte</p>
 
+        {% if error %}
+            <p role="alert">{{ error }}</p>
+        {% endif %}
+
         <form method="POST" action="{{ url_for('login') }}">
 
             <div class="campo">

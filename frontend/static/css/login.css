@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.login-body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #eef2f7, #dce5ef);
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.login-contenedor {
+    width: 100%;
+    max-width: 420px;
+    background-color: #ffffff;
+    padding: 40px 35px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.10);
+    text-align: center;
+}
+
+.login-icono {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e8eef7;
+    color: #345b83;
+    border-radius: 50%;
+    font-size: 32px;
+}
+
+.login-contenedor h1 {
+    color: #26384a;
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.login-subtitulo {
+    color: #7b8794;
+    font-size: 14px;
+    margin-bottom: 32px;
+}
+
+.campo {
+    text-align: left;
+    margin-bottom: 22px;
+}
+
+.campo label {
+    display: block;
+    color: #34495e;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.campo input {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #d5dce5;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+    color: #26384a;
+    transition: border-color 0.3s;
+}
+
+.campo input:focus {
+    border-color: #527da8;
+}
+
+.campo input::placeholder {
+    color: #a5aeb8;
+}
+
+.campo-password {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.campo-password input {
+    padding-right: 75px;
+}
+
+.boton-ojo {
+    position: absolute;
+    right: 12px;
+    border: none;
+    background: none;
+    color: #527da8;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.boton-login {
+    width: 100%;
+    padding: 14px;
+    background-color: #345b83;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.boton-login:hover {
+    background-color: #274766;
+}
+
+.login-pie {
+    margin-top: 28px;
+    color: #9aa3ad;
+    font-size: 12px;
+}
+
+@media (max-width: 480px) {
+    .login-contenedor {
+        padding: 32px 24px;
+    }
+
+    .login-contenedor h1 {
+        font-size: 24px;
+    }
+}
