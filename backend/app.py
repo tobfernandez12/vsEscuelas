@@ -12,12 +12,7 @@ app = Flask(
 
 @app.route("/")
 def inicio():
-    return redirect(url_for("operador"))
-
-@app.route("/login")
-def login():
     return redirect(url_for("login"))
-
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
