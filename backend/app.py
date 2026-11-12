@@ -30,7 +30,7 @@ def login():
 
 @app.route("/operador")
 def operador():
-    return render_template("index.html")
+    return render_template("usuario.html")
 
 
 @app.route("/admin")
