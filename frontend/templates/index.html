@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f7fb">
+    <meta name="description" content="Mesa de Ayuda: seguimiento simple y claro de reportes técnicos.">
+    <title>Mesa de Ayuda | Centro de Formación Horizonte</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="../static/js/script.js" defer></script>
+</head>
+<body>
+    <header class="encabezado">
+        <div class="barra-navegacion">
+            <a class="marca" href="#inicio" aria-label="Mesa de Ayuda, inicio">
+                <span class="marca-icono" aria-hidden="true">✦</span>
+                <span class="marca-texto">Mesa de <strong>Ayuda</strong></span>
+            </a>
+
+            <button class="menu-alternar" type="button" aria-expanded="false" aria-controls="navegacion-principal">
+                <span class="sr-only">Abrir navegación</span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="navegacion" id="navegacion-principal" aria-label="Navegación principal">
+                <a href="#inicio">Inicio</a>
+                <a href="#reportes">Reportes</a>
+                <a href="#acceso">Acceso</a>
+                <a class="enlace-login" href="{{ url_for('login') }}" data-static-href="login.html">Iniciar sesión <span aria-hidden="true">↗</span></a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="portada" id="inicio">
+            <div class="portada-contenido">
+                <p class="etiqueta"><span class="punto"></span> Centro de Formación Horizonte</p>
+                <h1>Resolver juntos,<br><span>más fácil.</span></h1>
+                <p class="portada-descripcion">
+                    Un espacio para informar inconvenientes, hacer seguimiento y mantener
+                    todo en orden. Estamos para ayudarte.
+                </p>
+                <div class="portada-acciones">
+                    <a class="boton boton-principal" href="#reportes">Explorar reportes <span aria-hidden="true">↓</span></a>
+                    <a class="boton boton-secundario" href="{{ url_for('login') }}" data-static-href="login.html">Iniciar sesión</a>
+                </div>
+                <div class="portada-nota">
+                    <span class="nota-icono" aria-hidden="true">✓</span>
+                    <span>Tu solicitud, organizada desde el primer momento.</span>
+                </div>
+            </div>
+
+            <div class="portada-ilustracion" aria-hidden="true">
+                <div class="halo halo-grande"></div>
+                <div class="halo halo-chico"></div>
+                <div class="tarjeta-ilustrada">
+                    <div class="tarjeta-cabecera">
+                        <span class="tarjeta-simbolo">✦</span>
+                        <span class="tarjeta-puntos">•••</span>
+                    </div>
+                    <div class="linea linea-larga"></div>
+                    <div class="linea linea-media"></div>
+                    <div class="estado-ilustrado"><span></span> Todo en seguimiento</div>
+                    <div class="tarjeta-pie">
+                        <span class="avatar">H</span>
+                        <span class="avatar avatar-dos">A</span>
+                        <span class="texto-pie">Un equipo para ayudarte</span>
+                    </div>
+                </div>
+                <div class="burbuja burbuja-arriba">Tu voz cuenta <span>♡</span></div>
+                <div class="burbuja burbuja-abajo"><span class="burbuja-check">✓</span> Reporte recibido</div>
+            </div>
+        </section>
+
+        <section class="seccion-reportes" id="reportes">
+            <div class="seccion-encabezado">
+                <div>
+                    <p class="sobrelinea">A un paso de resolverlo</p>
+                    <h2>¿Qué necesitás hacer?</h2>
+                </div>
+                <p class="seccion-intro">Elegí una opción para acceder a las herramientas que corresponden a tu perfil.</p>
+            </div>
+
+            <div class="tarjetas-reportes">
+                <article class="tarjeta-rol tarjeta-usuario">
+                    <div class="icono-rol" aria-hidden="true">↗</div>
+                    <p class="rol-etiqueta">Para usuarios</p>
+                    <h3>Crear y consultar reportes</h3>
+                    <p>Contanos qué pasó, revisá tus solicitudes y mantené tus datos al día.</p>
+                    <a href="{{ url_for('operador') }}#reportes" data-static-href="usuario.html" class="enlace-tarjeta">Ir a reportes <span aria-hidden="true">→</span></a>
+                </article>
+
+                <article class="tarjeta-rol tarjeta-admin">
+                    <div class="icono-rol" aria-hidden="true">⌘</div>
+                    <p class="rol-etiqueta">Para administradores</p>
+                    <h3>Gestionar solicitudes</h3>
+                    <p>Organizá los reportes, actualizá su estado y acompañá cada solución.</p>
+                    <a href="{{ url_for('admin') }}" data-static-href="administrador.html" class="enlace-tarjeta">Ir a administración <span aria-hidden="true">→</span></a>
+                </article>
+            </div>
+        </section>
+
+        <section class="seccion-acceso" id="acceso">
+            <div class="acceso-icono" aria-hidden="true">✦</div>
+            <div class="acceso-contenido">
+                <p class="sobrelinea">Acceso al sistema</p>
+                <h2>¿Ya tenés una cuenta?</h2>
+                <p>Iniciá sesión para continuar con las herramientas de tu perfil.</p>
+            </div>
+            <a class="boton boton-claro" href="{{ url_for('login') }}" data-static-href="login.html">Iniciar sesión <span aria-hidden="true">↗</span></a>
+        </section>
+    </main>
+
+    <footer class="pie-pagina">
+        <a class="marca marca-pie" href="#inicio">
+            <span class="marca-icono" aria-hidden="true">✦</span>
+            <span class="marca-texto">Mesa de <strong>Ayuda</strong></span>
+        </a>
+        <p>Centro de Formación Horizonte <span aria-hidden="true">·</span> Un equipo para ayudarte</p>
+        <a class="volver-arriba" href="#inicio">Volver arriba ↑</a>
+    </footer>
+</body>
+</html>
