@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración de reportes</title>
+    <link rel="stylesheet" href="../public/css/administrador.css">
+</head>
+<body>
+    <h1>Administración de reportes</h1>
+
+    <h2>Crear reporte</h2>
+    <form>
+        <label>Título <input type="text" name="titulo"></label>
+        <label>Descripción <textarea name="descripcion"></textarea></label>
+        <label>Prioridad
+            <select name="prioridad">
+                <option>Baja</option>
+                <option>Media</option>
+                <option>Alta</option>
+            </select>
+        </label>
+        <button type="submit">Crear reporte</button>
+    </form>
+
+    <h2>Buscar reportes</h2>
+    <form class="filtros">
+        <input type="search" placeholder="Buscar reporte">
+        <select name="estado">
+            <option>Todos los estados</option>
+            <option>Abierto</option>
+            <option>En proceso</option>
+            <option>Cerrado</option>
+        </select>
+        <button type="submit">Filtrar</button>
+    </form>
+
+    <h2>Listado</h2>
+    <ul>
+        <li><a href="#detalle">Reporte de ejemplo</a> - Abierto - Alta</li>
+    </ul>
+
+    <h2 id="detalle">Detalle del reporte</h2>
+    <p><strong>Título:</strong> Reporte de ejemplo</p>
+    <p><strong>Descripción:</strong> Descripción del reporte</p>
+    <p><strong>Prioridad:</strong> Alta</p>
+    <p><strong>Estado:</strong> Abierto</p>
+
+    <form>
+        <label>Cambiar estado
+            <select name="estado">
+                <option>Abierto</option>
+                <option>En proceso</option>
+                <option>Cerrado</option>
+            </select>
+        </label>
+        <label>Solución
+            <textarea name="solucion" placeholder="Escribir solución"></textarea>
+        </label>
+        <button type="submit">Guardar cambios</button>
+    </form>
+
+    <form class="eliminar" onsubmit="return confirm('¿Seguro que querés eliminar este reporte?');">
+        <button type="submit">Eliminar reporte abierto</button>
+    </form>
+</body>
+</html>
