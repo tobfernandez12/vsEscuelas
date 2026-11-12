@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar sesión</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}" type="png">
 </head>
+<title>Mesa de ayuda</title>
 
 <body class="login-body">
-
     <main class="login-contenedor">
-
+        <a href="{{ url_for('operador') }}">Vista operador</a>
+        <a href="{{ url_for('admin')}}">Admin</a>
         <div class="login-icono">✦</div>
 
         <h1>Mesa de Ayuda</h1>

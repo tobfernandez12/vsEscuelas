@@ -10,9 +10,12 @@ app = Flask(
     static_url_path="/static",
 )
 
-
 @app.route("/")
 def inicio():
+    return redirect(url_for("operador"))
+
+@app.route("/login")
+def login():
     return redirect(url_for("login"))
 
 
