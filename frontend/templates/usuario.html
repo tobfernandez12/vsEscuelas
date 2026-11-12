@@ -7,7 +7,14 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/usuario.css') }}">
 </head>
 <body>
-    <h1>Reportes</h1>
+
+    <div>
+        <h1>Reportes</h1>
+        <form action="{{ url_for('logout') }}" method="POST">
+            <button type="submit">Cerrar sesión</button>
+        </form>
+    </div>
+
 
     <h2>Crear reporte</h2>
     <form id="crear-reporte">

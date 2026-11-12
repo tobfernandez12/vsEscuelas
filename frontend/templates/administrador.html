@@ -7,8 +7,14 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='/css/administrador.css')}}">
 </head>
 <body>
-    <h1>Administración de reportes</h1>
 
+    <div>
+        <h1>Administración de reportes</h1>
+        <form action="{{ url_for('logout') }}" method="POST">
+            <button type="submit">Cerrar sesión</button>
+        </form>
+    </div>
+    
     <h2>Crear reporte</h2>
     <form id="crear-reporte">
         <label>Título <input type="text" name="titulo" required></label>
