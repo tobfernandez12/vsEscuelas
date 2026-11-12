@@ -10,25 +10,14 @@
 
 <body class="login-body">
     <main class="login-contenedor">
-<<<<<<< HEAD
-=======
-        <a href="{{ url_for('usuario') }}">Vista operador</a>
-        <a href="{{ url_for('administrador')}}">Admin</a>
->>>>>>> beb715bb5e3a435207f8e8bec94dfd98620c4e98
         <div class="login-icono">✦</div>
 
         <h1>Mesa de Ayuda</h1>
         <p class="login-subtitulo">Centro de Formación Horizonte</p>
 
-<<<<<<< HEAD
         {% if error %}
         <p role="alert">{{ error }}</p>
         {% endif %}
-=======
-        <!-- {% if error %} -->
-        <p id="error-login" role="alert">{{ error }}</p>
-        <!-- {% endif %} -->
->>>>>>> daac16525f008a6c2babb9498585230ae1a06f67
 
         <form method="POST" action="{{ url_for('login') }}">
 
