@@ -12,22 +12,20 @@ app = Flask(
 
 @app.route("/")
 def inicio():
-    return redirect(url_for("operador"))
-
-@app.route("/login")
-def login():
     return redirect(url_for("login"))
-
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
-        # Falta implementar la validación contra MariaDB.
-        return render_template("login.html", error="El inicio de sesión todavía está en configuración.", ), 503
+        return render_template(
+            "login.html",
+            error="El inicio de sesión todavía está en configuración.",
+        ), 503
 
     return render_template("login.html")
 
 
+# Vistas temporales de desarrollo: falta agregar sesión y permisos.
 @app.route("/operador")
 def operador():
     return render_template("usuario.html")
@@ -36,6 +34,7 @@ def operador():
 @app.route("/admin")
 def admin():
     return render_template("admin.html")
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080, debug=False)
